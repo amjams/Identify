@@ -177,6 +177,19 @@ def normalize8(I,normalize_by=None):
   return I.astype(np.uint8)
 
 
+# NNLS to FCLS
+def nnls2fcls(End_maps):
+    EM,x,y,files = End_maps.shape
+    for i in range(x):
+        for j in range(y):
+            for f in range(files):
+                End_maps[:,i,j,f] = End_maps[:,i,j,f]/np.sum(End_maps[:,i,j,f])
+    return End_maps
+
+def nnls_maxcf(End_maps):
+    return End_maps/End_maps.max()
+
+
 def mosaic_edx(main_folder='/data/p276451/EDX/',rows=[0,2],cols=[0,2],base_dims=[1024,1024,256],hash_sample=None,crop_neg=96):
     haadf = np.zeros((base_dims[0]*(rows[1]-rows[0]),base_dims[1]*(cols[1]-cols[0])))
 
