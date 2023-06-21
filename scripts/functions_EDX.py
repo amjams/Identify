@@ -176,6 +176,21 @@ def normalize8(I,normalize_by=None):
   I = ((I - mn)/mx) * 255
   return I.astype(np.uint8)
 
+# use this one if you want to normalize by another array
+def normalize88(I,normalizer=None):
+    if normalizer is None:  
+        mn = I.min()
+        mx = I.max()
+        #print(mx)
+    else:
+        mn = normalizer.min()
+        mx = normalizer.max()
+        #print(mx)
+
+    mx -= mn
+    I = ((I - mn)/mx) * 255
+    return I.astype(np.uint8),mn,mx
+
 
 # NNLS to FCLS
 def nnls2fcls(End_maps):
