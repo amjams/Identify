@@ -1,0 +1,1 @@
+The HAADFS can be imported from the .npz file available in secondary_data/ using scripts/data_analysis/create_haadfstack_corrected_tiffs.ipynb
