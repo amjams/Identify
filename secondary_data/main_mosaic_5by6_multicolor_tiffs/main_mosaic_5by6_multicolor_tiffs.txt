@@ -1,0 +1,1 @@
+The multicolor tiff-files can be generated using scripts/data_visualization/Figure_3Multicolor_abundance_maps.ipynb
