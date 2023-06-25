@@ -229,7 +229,10 @@ def show_anns(anns,display=True,randomColors=True):
         return img
     
 # SAM EDX 
-def show_anns_EDX(anns,abundance_tile,colors,display=True):
+def show_anns_EDX(anns,abundance_tile,colors,display=True,alpha=0.35,area_thresh=None):
+    if area_thresh is None:
+        area_thresh = abundance_tile.shape[0]*abundance_tile.shape[1]
+    
     if len(anns) == 0:
         return
     sorted_anns = sorted(anns, key=(lambda x: x['area']), reverse=True)
@@ -240,19 +243,19 @@ def show_anns_EDX(anns,abundance_tile,colors,display=True):
     img[:,:,3] = 0
     for ann in sorted_anns:
         m = ann['segmentation']
-        
-        tmp_img = np.zeros((sorted_anns[0]['segmentation'].shape[0], sorted_anns[0]['segmentation'].shape[1]))
-        tmp_img[m] = 1
-        tmp_abundance_masked = tmp_img*abundance_tile
-        temp_sum = np.sum(np.sum(tmp_abundance_masked,axis=1),axis=1)
-        color_idx = np.argmax(temp_sum)
-        color_mask = np.concatenate([colors[color_idx], [0.35]])
-        img[m] = color_mask
+        if np.sum(m)<area_thresh:
+            tmp_img = np.zeros((sorted_anns[0]['segmentation'].shape[0], sorted_anns[0]['segmentation'].shape[1]))
+            tmp_img[m] = 1
+
+            tmp_abundance_masked = tmp_img*abundance_tile
+            temp_sum = np.sum(np.sum(tmp_abundance_masked,axis=1),axis=1)
+            color_idx = np.argmax(temp_sum)
+            color_mask = np.concatenate([colors[color_idx], [alpha]])
+            img[m] = color_mask
     if display:
         ax.imshow(img)
     else:
         return img
-
 
 
 
