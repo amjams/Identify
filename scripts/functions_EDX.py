@@ -205,6 +205,59 @@ def nnls_maxcf(End_maps):
     return End_maps/End_maps.max()
 
 
+# SAM
+def show_anns(anns,display=True,randomColors=True):
+    if len(anns) == 0:
+        return
+    sorted_anns = sorted(anns, key=(lambda x: x['area']), reverse=True)
+    #ax = plt.gca()
+    #ax.set_autoscale_on(False)
+
+    img = np.ones((sorted_anns[0]['segmentation'].shape[0], sorted_anns[0]['segmentation'].shape[1], 4))
+    img[:,:,3] = 0
+    for ann in sorted_anns:
+        m = ann['segmentation']
+        if randomColors:
+            color_mask = np.concatenate([np.random.random(3), [0.35]])
+        else:
+            color_mask = np.asarray([1,0,0,0.35])   
+        img[m] = color_mask
+    
+    if display:
+        ax.imshow(img)
+    else:
+        return img
+    
+# SAM EDX 
+def show_anns_EDX(anns,abundance_tile,colors,display=True):
+    if len(anns) == 0:
+        return
+    sorted_anns = sorted(anns, key=(lambda x: x['area']), reverse=True)
+    #ax = plt.gca()
+    #ax.set_autoscale_on(False)
+
+    img = np.ones((sorted_anns[0]['segmentation'].shape[0], sorted_anns[0]['segmentation'].shape[1], 4))
+    img[:,:,3] = 0
+    for ann in sorted_anns:
+        m = ann['segmentation']
+        
+        tmp_img = np.zeros((sorted_anns[0]['segmentation'].shape[0], sorted_anns[0]['segmentation'].shape[1]))
+        tmp_img[m] = 1
+        tmp_abundance_masked = tmp_img*abundance_tile
+        temp_sum = np.sum(np.sum(tmp_abundance_masked,axis=1),axis=1)
+        color_idx = np.argmax(temp_sum)
+        color_mask = np.concatenate([colors[color_idx], [0.35]])
+        img[m] = color_mask
+    if display:
+        ax.imshow(img)
+    else:
+        return img
+
+
+
+
+
+# This is from Peregrine. Possibly not useful anymore
 def mosaic_edx(main_folder='/data/p276451/EDX/',rows=[0,2],cols=[0,2],base_dims=[1024,1024,256],hash_sample=None,crop_neg=96):
     haadf = np.zeros((base_dims[0]*(rows[1]-rows[0]),base_dims[1]*(cols[1]-cols[0])))
 
