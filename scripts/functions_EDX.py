@@ -206,22 +206,25 @@ def nnls_maxcf(End_maps):
 
 
 # SAM
-def show_anns(anns,display=True,randomColors=True):
+def show_anns(anns,display=True,randomColors=True,alpha=0.35,area_thresh=None):
     if len(anns) == 0:
         return
     sorted_anns = sorted(anns, key=(lambda x: x['area']), reverse=True)
     #ax = plt.gca()
     #ax.set_autoscale_on(False)
+    if area_thresh is None:
+        area_thresh = sorted_anns[0]['segmentation'].shape[0]**2
 
     img = np.ones((sorted_anns[0]['segmentation'].shape[0], sorted_anns[0]['segmentation'].shape[1], 4))
     img[:,:,3] = 0
     for ann in sorted_anns:
         m = ann['segmentation']
-        if randomColors:
-            color_mask = np.concatenate([np.random.random(3), [0.35]])
-        else:
-            color_mask = np.asarray([1,0,0,0.35])   
-        img[m] = color_mask
+        if np.sum(m)<area_thresh:
+            if randomColors:
+                color_mask = np.concatenate([np.random.random(3), [alpha]])
+            else:
+                color_mask = np.asarray([1,0,0,0.35])   
+            img[m] = color_mask
     
     if display:
         ax.imshow(img)
