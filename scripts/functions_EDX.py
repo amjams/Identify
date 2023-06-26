@@ -241,6 +241,7 @@ def show_anns_EDX(anns,abundance_tile,colors,display=True,alpha=0.35,area_thresh
 
     img = np.ones((sorted_anns[0]['segmentation'].shape[0], sorted_anns[0]['segmentation'].shape[1], 4))
     img[:,:,3] = 0
+    img_clr_idx = np.zeros((sorted_anns[0]['segmentation'].shape[0], sorted_anns[0]['segmentation'].shape[1]))-1
     for ann in sorted_anns:
         m = ann['segmentation']
         if np.sum(m)<area_thresh:
@@ -252,10 +253,11 @@ def show_anns_EDX(anns,abundance_tile,colors,display=True,alpha=0.35,area_thresh
             color_idx = np.argmax(temp_sum)
             color_mask = np.concatenate([colors[color_idx], [alpha]])
             img[m] = color_mask
+            img_clr_idx[m] = color_idx
     if display:
         ax.imshow(img)
     else:
-        return img
+        return img,img_clr_idx
 
 
 
