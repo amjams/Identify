@@ -83,15 +83,9 @@ def rebin_spectrumXY(spectrum,bins=1024):
 #        print(k)
 #    return new_spectrum
 
-
-def rebin_energies(energies,bins=1024):
+def rebin_energies(energies, bins):
     z = energies.shape[0]
-    energies = np.linspace(energies[0],energies[-1],bins)
-    return energies
-
-def rebin_energies_01(energies,bins=1024):
-    z = energies.shape[0]
-    energies = np.linspace(energies[0],energies[-1],bins)
+    energies = energies.reshape((bins, int(z/bins))).mean(axis=1)
     return energies
 
 def clahe(img, clipLimit=2.0, tileGridSize=(8,8)):
