@@ -1,7 +1,7 @@
 # Automated hyperspectral distinction of biological features in large-scale electron microscopy data
 This is the code and data repository of the paper “Automated hyperspectral distinction of biological features in large-scale electron microscopy data”, which is submitted for review. Here, you can find links to view the full EM maps accompanying the paper, code to reproduce data analysis described in the paper, and downloadable EDX-EM data for reuse.
 
-### Index to the downloadable data
+Index to the downloadable data
 ---------
 [nanotomy.org](http://www.nanotomy.org/PW/temp03/Duinkerken2023SUB/index.html)
 
