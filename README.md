@@ -13,9 +13,15 @@ Links to viewable EM maps
 
 [Multi-channel abundance maps](http://www.nanotomy.org/avivator/?image_url=http://www.nanotomy.org/PW/temp03/Duinkerken2023SUB/figures/fig2/abundance_maps.ome.tiff)
 
-How to use
+Note to reviewers
 ---------
-
+The results of the paper, per figure, can be obtained by using the scripts in this repository as follows:
+#### Figure 1
+1) The visualization of the HSI can be reproduced using (this file)[https://github.com/amjams/Identify/blob/main/scripts/data_visualization/Figure_1A_HSI.ipynb]
+#### Figure 2
+#### Figure 3
+#### Figure 4
+#### Figure 5
 
 References
 ---------
