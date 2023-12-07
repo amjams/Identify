@@ -39,7 +39,7 @@ The results of the paper, per figure, can be reproduced using the scripts in thi
 
 References
 ---------
-The endmember extraction algorithm used in this study was adapted from the work [Vermeulen et al. (2021)](https://www.sciencedirect.com/science/article/abs/pii/S1386142521001232), and using code from the corresponding [repository](https://github.com/NU-ACCESS/UMAP).
+The endmember extraction algorithm used in this study was adapted from the work [Vermeulen et al. (2021)](https://www.sciencedirect.com/science/article/abs/pii/S1386142521001232), and using code from the corresponding [repository](https://github.com/NU-ACCESS/UMAP). The implementation of Vertex Component Analysis is from this [repository](https://github.com/Laadr/VCA).
 
 Licensing
 ---------
