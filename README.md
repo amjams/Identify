@@ -5,6 +5,9 @@ Index to the downloadable data
 ---------
 [nanotomy.org](http://www.nanotomy.org/PW/temp03/Duinkerken2023SUB/index.html)
 
+Description of the downloadable data
+---------
+
 Links to viewable EM maps
 ---------
 [HAADF](http://www.nanotomy.org/avivator/?image_url=http://www.nanotomy.org/PW/temp03/Duinkerken2023SUB/figures/fig2/HAADF.ome.tiff)
@@ -25,8 +28,11 @@ The results of the paper, per figure, can be reproduced using the scripts in thi
 2) To reproduce the scatter plot from the precomputed embeddings and clusters, use this [file](https://github.com/amjams/Identify/blob/main/scripts/data_visualization/Figure_2A_Clustering.ipynb).
 3) To reproduce the heatmap of the endmembers, use this [file](https://github.com/amjams/Identify/blob/main/scripts/data_visualization/Figure_2C_HeatMap.ipynb).
 #### Figure 3
+
 #### Figure 4
+- This figure, the qdot endmember extraction, can be reproduced using this [file](https://github.com/amjams/Identify/blob/main/scripts/data_visualization/Figure_S1_QDVCA.ipynb).
 #### Figure 5
+- The colored UMAP embeddings can be reproduced using this [file](https://github.com/amjams/Identify/blob/main/scripts/data_visualization/Figure_S2_ColoredUMAP.ipynb).
 
 References
 ---------
