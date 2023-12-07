@@ -17,7 +17,8 @@ Note to reviewers
 ---------
 The results of the paper, per figure, can be obtained by using the scripts in this repository as follows:
 #### Figure 1
-1) The visualization of the HSI can be reproduced using (this file)[https://github.com/amjams/Identify/blob/main/scripts/data_visualization/Figure_1A_HSI.ipynb]
+1) The visualization of the HSI can be reproduced using [this file](https://github.com/amjams/Identify/blob/main/scripts/data_visualization/Figure_1A_HSI.ipynb)
+2) The endmember extraction and abundance map calculation can reproduced using [this file](https://github.com/amjams/Identify/blob/main/scripts/data_visualization/Figure_1B%2BC_UMAP%2BAbundanceMaps.ipynb)
 #### Figure 2
 #### Figure 3
 #### Figure 4
