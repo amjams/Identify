@@ -5,6 +5,12 @@ Index to the downloadable data
 ---------
 [nanotomy.org](http://www.nanotomy.org/PW/temp03/Duinkerken2023SUB/index.html)
 
+Description of the downloadable data
+---------
+1) Raw (.emd): The raw EMD files containing the HSI, which are produced by the microscope.
+2) Pre-processes (.npz): The preprocessed (binned/denoised etc.) HSI cubes saved in numpy compressed arrays, which are flattened to 2D.
+3) NPZ raw files (not downloadable): this is an intermediate step of processesing, which involved packaging the .emd file as npz. files, which contain the HSI summed up to a defined number of frames, the EM image, and metadata. These NPZ files are not downloadable, but can be generated from the EMD files using this [file].
+
 Links to viewable EM maps
 ---------
 [HAADF](http://www.nanotomy.org/avivator/?image_url=http://www.nanotomy.org/PW/temp03/Duinkerken2023SUB/figures/fig2/HAADF.ome.tiff)
@@ -13,9 +19,23 @@ Links to viewable EM maps
 
 [Multi-channel abundance maps](http://www.nanotomy.org/avivator/?image_url=http://www.nanotomy.org/PW/temp03/Duinkerken2023SUB/figures/fig2/abundance_maps.ome.tiff)
 
-How to use
+Note to reviewers
 ---------
+The results of the paper, per figure, can be reproduced using the scripts in this repository as follows:
+#### Figure 1
+1) The visualization of the HSI can be reproduced using this [file](https://github.com/amjams/Identify/blob/main/scripts/data_visualization/Figure_1A_HSI.ipynb).
+2) The endmember extraction and abundance map calculation can reproduced using this [file](https://github.com/amjams/Identify/blob/main/scripts/data_visualization/Figure_1B%2BC_UMAP%2BAbundanceMaps.ipynb).
+3) The elemental maps are saved [here](https://github.com/amjams/Identify/tree/main/secondary_data/Figure1_elementmaps) and can be reproduced from this [file](https://github.com/amjams/Identify/blob/main/scripts/data_visualization/Figure_1C_ElementMaps.ipynb). This file uses the HSI raw data, which are not stored in this directory, but can be downloaded from [here](http://www.nanotomy.org/PW/temp03/Duinkerken2023SUB/index.html).
+#### Figure 2
+1) The stack of UMAP embeddings in the figure can be reproduced using this [file](https://github.com/amjams/Identify/blob/main/scripts/data_visualization/Figure_2A_IterativeEmbeddings.ipynb). Note that this is just an illustration for the figure. To compute all endmember extraction iteration, which are used to for the clustering, use the instruction below.
+2) To reproduce the scatter plot from the precomputed embeddings and clusters, use this [file](https://github.com/amjams/Identify/blob/main/scripts/data_visualization/Figure_2A_Clustering.ipynb).
+3) To reproduce the heatmap of the endmembers, use this [file](https://github.com/amjams/Identify/blob/main/scripts/data_visualization/Figure_2C_HeatMap.ipynb).
+#### Figure 3
 
+#### Figure 4
+- This figure, the qdot endmember extraction, can be reproduced using this [file](https://github.com/amjams/Identify/blob/main/scripts/data_visualization/Figure_S1_QDVCA.ipynb).
+#### Figure 5
+- The colored UMAP embeddings can be reproduced using this [file](https://github.com/amjams/Identify/blob/main/scripts/data_visualization/Figure_S2_ColoredUMAP.ipynb).
 
 References
 ---------
