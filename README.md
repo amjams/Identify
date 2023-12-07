@@ -7,6 +7,9 @@ Index to the downloadable data
 
 Description of the downloadable data
 ---------
+1) Raw (.emd): The raw EMD files containing the HSI, which are produced by the microscope.
+2) Pre-processes (.npz): The preprocessed (binned/denoised etc.) HSI cubes saved in numpy compressed arrays, which are flattened to 2D.
+3) NPZ raw files (not downloadable): this is an intermediate step of processesing, which involved packaging the .emd file as npz. files, which contain the HSI summed up to a defined number of frames, the EM image, and metadata. These NPZ files are not downloadable, but can be generated from the EMD files using this [file].
 
 Links to viewable EM maps
 ---------
