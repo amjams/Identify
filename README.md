@@ -31,7 +31,7 @@ The results of the paper, per figure, can be reproduced using the scripts in thi
 2) To reproduce the scatter plot from the precomputed embeddings and clusters, use this [file](https://github.com/amjams/Identify/blob/main/scripts/data_visualization/Figure_2A_Clustering.ipynb).
 3) To reproduce the heatmap of the endmembers, use this [file](https://github.com/amjams/Identify/blob/main/scripts/data_visualization/Figure_2C_HeatMap.ipynb).
 #### Figure 3
-1) The scripts for reproducing the figure can be found [here](https://github.com/amjams/Identify/tree/main/scripts/data_analysis/segmentation)
+- The scripts for reproducing the figure can be found [here](https://github.com/amjams/Identify/tree/main/scripts/data_analysis/segmentation)
 #### Figure 4
 - This figure, the qdot endmember extraction, can be reproduced using this [file](https://github.com/amjams/Identify/blob/main/scripts/data_visualization/Figure_S1_QDVCA.ipynb).
 #### Figure 5
